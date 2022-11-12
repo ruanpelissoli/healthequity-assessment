@@ -10,7 +10,7 @@ internal class CachedCarsRepository : ICarsRepository
     private readonly ICarsRepository _decorated;
     private readonly IDatabase _redisDb;
 
-    private const int _expiryInMinutes = 5;
+    private const int _expireInMinutes = 5;
 
     public CachedCarsRepository(ICarsRepository decorated, IDatabase redisDb)
     {
@@ -23,7 +23,7 @@ internal class CachedCarsRepository : ICarsRepository
         var fromDb = await _decorated.AddAsync(entity);
 
         await _redisDb.StringSetAsync(entity.Id.ToString(), JsonSerializer.Serialize(fromDb),
-                TimeSpan.FromMinutes(_expiryInMinutes));
+                TimeSpan.FromMinutes(_expireInMinutes));
 
         return fromDb;
     }
@@ -41,19 +41,17 @@ internal class CachedCarsRepository : ICarsRepository
     {
         var cached = _redisDb.StringGet(id.ToString());
 
-        if (cached.IsNull)
-        {
-            var fromDb = await _decorated.GetByIdAsync(id);
+        if (!cached.IsNull)
+            return JsonSerializer.Deserialize<Car>(cached!);
 
-            if (fromDb == null) return fromDb;
+        var fromDb = await _decorated.GetByIdAsync(id);
 
-            await _redisDb.StringSetAsync(id.ToString(), JsonSerializer.Serialize(fromDb),
-                TimeSpan.FromMinutes(_expiryInMinutes));
+        if (fromDb == null) return fromDb;
 
-            return fromDb;
-        }
+        await _redisDb.StringSetAsync(id.ToString(), JsonSerializer.Serialize(fromDb),
+            TimeSpan.FromMinutes(_expireInMinutes));
 
-        return JsonSerializer.Deserialize<Car>(cached!);
+        return fromDb;
     }
 
     public Task<Car> GetCarRandomly() => _decorated.GetCarRandomly();
@@ -66,6 +64,6 @@ internal class CachedCarsRepository : ICarsRepository
         _redisDb.StringGetDelete(entity.Id.ToString());
 
         _redisDb.StringSet(entity.Id.ToString(), JsonSerializer.Serialize(entity),
-                TimeSpan.FromMinutes(_expiryInMinutes));
+                TimeSpan.FromMinutes(_expireInMinutes));
     }
 }
