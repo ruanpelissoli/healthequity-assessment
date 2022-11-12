@@ -5,4 +5,6 @@ docker-compose up
 
 This will spin up the app, the ms sql server and redis.
 
-Then access localhost:8080 in your browser
+Then access localhost:8080 in your browser.
+
+The sql assessment is inside the query.sql file.
