@@ -1,5 +1,5 @@
 ﻿using HealthEquity.Assessment.Application.Cars;
-using HealthEquity.Assessment.Application.Cars.Queries.GetCarDetail;
+using HealthEquity.Assessment.Application.Cars.Commands.CheckGuessingPriceResult;
 using HealthEquity.Assessment.Application.Cars.Queries.GetRandomCar;
 using HealthEquity.Assessment.Domain.DomainEvents;
 using MediatR;
@@ -9,12 +9,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace HealthEquity.Assessment.Pages;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
     private readonly IMediator _mediatr;
 
-    public IndexModel(ILogger<IndexModel> logger, IMediator mediatr)
+    public IndexModel(IMediator mediatr)
     {
-        _logger = logger;
         _mediatr = mediatr;
     }
 
@@ -39,19 +37,15 @@ public class IndexModel : PageModel
         if (!ModelState.IsValid)
             return Page();
 
-        var result = await _mediatr.Send(new GetCarDetailQuery(GuessingPrice.Car.Id));
+        var result = await _mediatr.Send(new CheckGuessingPriceResultCommand(GuessingPrice.Car.Id, GuessingPrice.Price));
 
         return result.Match(
-            car =>
+            result =>
             {
-                if (GuessingPrice.Price >= car.Price - 5000 && GuessingPrice.Price <= car.Price + 5000)
-                {
+                if (result)
                     _mediatr.Publish(new ShowSuccessMessageEvent("Nice shot!"));
-                }
                 else
-                {
                     _mediatr.Publish(new ShowErrorMessageEvent("Not close, try again!"));
-                }
 
                 return (IActionResult)RedirectToPage("./Index");
             },

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment", "HealthEquity.Assessment\HealthEquity.Assessment.csproj", "{2EA43164-A6BA-4370-B2D6-04B466E72555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthEquity.Assessment", "HealthEquity.Assessment\HealthEquity.Assessment.csproj", "{2EA43164-A6BA-4370-B2D6-04B466E72555}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise1", "Exercise1", "{6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}"
 EndProject
@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise2", "Exercise2", "{
 		query.sql = query.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Domain", "HealthEquity.Assessment.Domain\HealthEquity.Assessment.Domain.csproj", "{CB79FC03-2D75-4B72-98B8-65D7473BE663}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthEquity.Assessment.Domain", "HealthEquity.Assessment.Domain\HealthEquity.Assessment.Domain.csproj", "{CB79FC03-2D75-4B72-98B8-65D7473BE663}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Infrastructure", "HealthEquity.Assessment.Infrastructure\HealthEquity.Assessment.Infrastructure.csproj", "{DBB7FB37-C796-4197-98C0-398B941FC139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthEquity.Assessment.Infrastructure", "HealthEquity.Assessment.Infrastructure\HealthEquity.Assessment.Infrastructure.csproj", "{DBB7FB37-C796-4197-98C0-398B941FC139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Application", "HealthEquity.Assessment.Application\HealthEquity.Assessment.Application.csproj", "{C1394199-A3F5-4F54-936F-1050F04D34E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthEquity.Assessment.Application", "HealthEquity.Assessment.Application\HealthEquity.Assessment.Application.csproj", "{C1394199-A3F5-4F54-936F-1050F04D34E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Tests", "HealthEquity.Assessment.Tests\HealthEquity.Assessment.Tests.csproj", "{BF022C15-C951-4518-8670-0A8C75960F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF022C15-C951-4518-8670-0A8C75960F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF022C15-C951-4518-8670-0A8C75960F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF022C15-C951-4518-8670-0A8C75960F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF022C15-C951-4518-8670-0A8C75960F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{CB79FC03-2D75-4B72-98B8-65D7473BE663} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
 		{DBB7FB37-C796-4197-98C0-398B941FC139} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
 		{C1394199-A3F5-4F54-936F-1050F04D34E3} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
+		{BF022C15-C951-4518-8670-0A8C75960F9A} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {219D3068-A923-4AC8-9E22-1E129B2E409D}
