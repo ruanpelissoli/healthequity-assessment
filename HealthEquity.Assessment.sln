@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment", "HealthEquity.Assessment\HealthEquity.Assessment.csproj", "{2EA43164-A6BA-4370-B2D6-04B466E72555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise1", "Exercise1", "{6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise2", "Exercise2", "{6E651ED6-9777-469F-B90F-712D8EF4E4BA}"
+	ProjectSection(SolutionItems) = preProject
+		query.sql = query.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Domain", "HealthEquity.Assessment.Domain\HealthEquity.Assessment.Domain.csproj", "{CB79FC03-2D75-4B72-98B8-65D7473BE663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Infrastructure", "HealthEquity.Assessment.Infrastructure\HealthEquity.Assessment.Infrastructure.csproj", "{DBB7FB37-C796-4197-98C0-398B941FC139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthEquity.Assessment.Application", "HealthEquity.Assessment.Application\HealthEquity.Assessment.Application.csproj", "{C1394199-A3F5-4F54-936F-1050F04D34E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA43164-A6BA-4370-B2D6-04B466E72555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA43164-A6BA-4370-B2D6-04B466E72555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA43164-A6BA-4370-B2D6-04B466E72555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA43164-A6BA-4370-B2D6-04B466E72555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB79FC03-2D75-4B72-98B8-65D7473BE663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB79FC03-2D75-4B72-98B8-65D7473BE663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB79FC03-2D75-4B72-98B8-65D7473BE663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB79FC03-2D75-4B72-98B8-65D7473BE663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB7FB37-C796-4197-98C0-398B941FC139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB7FB37-C796-4197-98C0-398B941FC139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB7FB37-C796-4197-98C0-398B941FC139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB7FB37-C796-4197-98C0-398B941FC139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1394199-A3F5-4F54-936F-1050F04D34E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EA43164-A6BA-4370-B2D6-04B466E72555} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
+		{CB79FC03-2D75-4B72-98B8-65D7473BE663} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
+		{DBB7FB37-C796-4197-98C0-398B941FC139} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
+		{C1394199-A3F5-4F54-936F-1050F04D34E3} = {6D680BB3-BC8A-4E47-8F55-3C01F1DF55E3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {219D3068-A923-4AC8-9E22-1E129B2E409D}
+	EndGlobalSection
+EndGlobal
